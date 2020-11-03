@@ -43,7 +43,7 @@ const TemplateWrapper = ({ children }) => {
           }
         }
       `}
-      render={data => (
+      render={(data) => (
         <div className={`container ${showMenu ? "is-open" : ""}`}>
           <HelmetDatoCms
             favicon={data.datoCmsSite.faviconMetaTags}
@@ -52,14 +52,14 @@ const TemplateWrapper = ({ children }) => {
           <div className="container__sidebar">
             <div className="sidebar">
               <h6 className="sidebar__title">
-                <h1>Luis Muñoz Velasquez </h1>
+                <h1>Luis Muñoz</h1>
                 <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
               </h6>
               <div
                 className="sidebar__intro"
                 dangerouslySetInnerHTML={{
                   __html:
-                    data.datoCmsHome.introTextNode.childMarkdownRemark.html
+                    data.datoCmsHome.introTextNode.childMarkdownRemark.html,
                 }}
               />
               <ul className="sidebar__menu">
@@ -92,7 +92,7 @@ const TemplateWrapper = ({ children }) => {
               <div className="mobile-header">
                 <div className="mobile-header__menu">
                   <button
-                    onClick={e => {
+                    onClick={(e) => {
                       e.preventDefault();
                       setShowMenu(!showMenu);
                     }}
@@ -112,7 +112,7 @@ const TemplateWrapper = ({ children }) => {
 };
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.object,
 };
 
 export default TemplateWrapper;
